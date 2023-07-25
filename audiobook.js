@@ -9,7 +9,7 @@ let audioGER;
 let playButton;
 
 function preload(){
-   // soundFormats('mp3');
+   soundFormats('mp3');
     audioESP = loadSound('assets/text_1')
 }
 
