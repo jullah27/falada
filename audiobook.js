@@ -4,7 +4,8 @@ let sliderA;
 let sliderB;
 let sliderC;
 let languageButton;
-let language = spanisch;
+//language mode: 0=ger, 1=esp
+let language = 1;
 let audioESP;
 let audioGER;
 let playButton;
@@ -31,7 +32,7 @@ function setup(){
     //language Button for switching languages
     languageButton = createButton('español')
     languageButton.position(wWidth/2, wHeight/2-20);
-    languageButton.mousePressed(sprachFunction);
+    languageButton.mousePressed(languageFunction);
 }
 
 function draw(){
@@ -53,14 +54,14 @@ function playFunction(){
     }
 }
 
-function sprachFunction(){
-    if (language = spanisch){
-        language = deutsch;
+function language(){
+    if (language = 1){
+        language = 0;
         audioESP.setVolume(0);
         audioGER.setVolume(0.8);
     }
     else{
-        langauge = spanisch;
+        langauge = 1;
         audioESP.setVolume(0.8);
         audioGER.setVolume(0);
 
