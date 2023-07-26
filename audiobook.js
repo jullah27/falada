@@ -67,14 +67,14 @@ function playFunction(){
 }
 
 function sprachFunction(){
-    if (language == 1){
-        language = 0;
+    if (sprache == 1){
+        sprache = 0;
         audioESP.setVolume(0);
         audioGER.setVolume(0.8);
         languageButton.html('GERMAN');
     }
     else{
-        langauge = 1;
+        sprache = 1;
         audioESP.setVolume(0.8);
         audioGER.setVolume(0);
         languageButton.html('SPANISH');
