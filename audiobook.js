@@ -32,7 +32,7 @@ function setup(){
     //language Button for switching languages
     languageButton = createButton('español')
     languageButton.position(wWidth/2, wHeight/2-20);
-    languageButton.mousePressed(languageFunction);
+    languageButton.mousePressed(sprachFunction);
 }
 
 function draw(){
@@ -54,14 +54,14 @@ function playFunction(){
     }
 }
 
-function language(){
+function sprachFunction(){
     if (language = 1){
         language = 0;
         audioESP.setVolume(0);
         audioGER.setVolume(0.8);
     }
     else{
-        langauge = 1;
+        language = 1;
         audioESP.setVolume(0.8);
         audioGER.setVolume(0);
 
