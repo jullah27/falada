@@ -5,7 +5,7 @@ let sliderB;
 let sliderC;
 let languageButton;
 //language mode: 0=ger, 1=esp
-let language = 1;
+let sprache = 1;
 let audioESP;
 let audioGER;
 let playButton;
@@ -55,13 +55,13 @@ function playFunction(){
 }
 
 function sprachFunction(){
-    if (language = 1){
+    if (sprache == 1){
         language = 0;
         audioESP.setVolume(0);
         audioGER.setVolume(0.8);
     }
     else{
-        language = 1;
+        sprache = 1;
         audioESP.setVolume(0.8);
         audioGER.setVolume(0);
 
