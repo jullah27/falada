@@ -23,6 +23,14 @@ function setup(){
     sliderA = createSlider(0,100,0);
     sliderA.position(20,20);
     sliderA.style('width', '400px');
+    //create slider for speech
+    sliderB = createSlider(0,100,0);
+    sliderB.position(40,40);
+    sliderB.style('width','400px');
+    // create slider for sounds
+    sliderC = createSlider(0,100,0);
+    sliderC.position(60,60);
+    sliderC.style('widht','400px');
 
     //play Button for all
     playButton = createButton('Play');
@@ -33,6 +41,10 @@ function setup(){
     languageButton = createButton('español')
     languageButton.position(wWidth/2, wHeight/2-20);
     languageButton.mousePressed(sprachFunction);
+
+    sprache = 1;
+    audioGER.setVolume(0);
+    audioESP.setVolume(0.8);
 }
 
 function draw(){
@@ -55,15 +67,18 @@ function playFunction(){
 }
 
 function sprachFunction(){
-    if (sprache == 1){
+    if (language == 1){
         language = 0;
         audioESP.setVolume(0);
         audioGER.setVolume(0.8);
+        languageButton.html('GERMAN');
     }
     else{
-        sprache = 1;
+        langauge = 1;
         audioESP.setVolume(0.8);
         audioGER.setVolume(0);
+        languageButton.html('SPANISH');
+
 
     }
 }
