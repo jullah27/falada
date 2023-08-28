@@ -34,12 +34,12 @@ function setup(){
 
     //create slider for sound
     sliderB = createSlider(0,100,80);
-    sliderB.position(40,20);
+    sliderB.position(20,80);
     sliderB.style('width', '400px');
 
     //create slider for voice
     sliderC = createSlider(0,100,80);
-    sliderC.position(60,20);
+    sliderC.position(20,140);
     sliderC.style('width', '400px');
 
     //play Button for all
