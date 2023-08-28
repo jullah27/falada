@@ -7,14 +7,22 @@ let languageButton;
 //language mode: 0=ger, 1=esp
 let sprache = 1;
 let audioESP;
+let musicESP;
+let soundESP;
 let audioGER;
+let musicGER;
+let soundGER;
 let playButton;
 
 
 function preload(){
     soundFormats('mp3');
     audioESP = loadSound('assets/text_1');
+    musicESP = loadSound('assets/musicESP');
+    soundESP = loadSound ('assets/soundESP');
     audioGER = loadSound('assets/text_2');
+    musicGER = loadSound('assets/musisGER');
+    soundGER = loadSound('assets/soundGER');
 }
 
 function setup(){
@@ -23,14 +31,6 @@ function setup(){
     sliderA = createSlider(0,100,0);
     sliderA.position(20,20);
     sliderA.style('width', '400px');
-    //create slider for speech
-    sliderB = createSlider(0,100,0);
-    sliderB.position(40,40);
-    sliderB.style('width','400px');
-    // create slider for sounds
-    sliderC = createSlider(0,100,0);
-    sliderC.position(60,60);
-    sliderC.style('widht','400px');
 
     //play Button for all
     playButton = createButton('Play');
@@ -56,27 +56,43 @@ function draw(){
 function playFunction(){
     if (audioESP.isPlaying()){
         audioESP.stop();
+        musicESP.stop();
+        soundESP.stop();
         audioGER.stop();
+        musicGER.stop();
+        soundGER.stop();
         playButton.html('Play');
     }    
     else{
         audioESP.play();
+        musicESP.play();
+        soundESP.play();
         audioGER.play();
+        musicGER.play();
+        soundGER.play();
         playButton.html('Stop');
     }
 }
 
 function sprachFunction(){
-    if (sprache == 1){
-        sprache = 0;
+    if (language == 1){
+        language = 0;
         audioESP.setVolume(0);
+        musicESP.setVolume(0);
+        soundESP.setVolume(0);
         audioGER.setVolume(0.8);
+        musicGER.setVolume(0.8);
+        soundGER.setVolume(0.8);
         languageButton.html('GERMAN');
     }
     else{
-        sprache = 1;
+        langauge = 1;
         audioESP.setVolume(0.8);
+        musicESP.setVolume(0.8);
+        soundESP.setVolume(0.8);
         audioGER.setVolume(0);
+        musicGER.setVolume(0);
+        soundGER.setVolume(0);
         languageButton.html('SPANISH');
 
 
