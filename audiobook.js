@@ -48,6 +48,7 @@ function preload(){
     falada = loadSound('assets/falada');
     outro = loadSound('assets/outro');
     water = loadSound('assets/water');
+    danger = loadSound('assets/danger');
 }
 
 function setup(){
@@ -111,9 +112,12 @@ function setup(){
     waterB.mousePressed(waterFunction);
 
     outroB = createButton('7');
-    outroB.position(wWidth/2,wHeight/2-140);
+    outroB.position(wWidth/2,wHeight/2-160);
     outroB.mousePressed(outroFunction);
-
+    
+    dangerB = createButton('8')
+    dangerB.position(wWidth/2, wHeight/2-180);
+    dangerB.mousePressed(dangerFunction);
 
     
     
@@ -207,4 +211,7 @@ function waterFunction(){
 }
 function outroFunction(){
     outro.play();
+}
+function dangerFunction(){
+    danger.play();
 }
