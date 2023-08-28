@@ -28,9 +28,19 @@ function preload(){
 function setup(){
     createCanvas(window.innerWidth, window.innerHeight);
     // create slider for music
-    sliderA = createSlider(0,100,0);
+    sliderA = createSlider(0,100,80);
     sliderA.position(20,20);
     sliderA.style('width', '400px');
+
+    //create slider for sound
+    sliderB = createSlider(0,100,80);
+    sliderB = position(40,20);
+    sliderB.style('width', '400px');
+
+    //create slider for voice
+    sliderC = createSlider(0,100,80);
+    sliderC = position(60,20);
+    sliderC.style('width', '400px');
 
     //play Button for all
     playButton = createButton('Play');
@@ -43,14 +53,33 @@ function setup(){
     languageButton.mousePressed(sprachFunction);
 
     sprache = 1;
-    audioGER.setVolume(0);
     audioESP.setVolume(0.8);
+    musicESP.setVolume(0.8);
+    soundESP.setVolume(0.8);
+    audioGER.setVolume(0);
+    musicGER.setVolume(0);
+    soundGER.setVolume(0);
+
+ 
 }
 
 function draw(){
- background(200,200,0);
- rect(200,200,20);
 
+    let music = sliderA.value()/100;
+    let sound = sliderB.value()/100;
+    let voice = sliderC.value()/100;
+ background(200,200,0);
+
+ if (sprache==1){
+    musicESP.setVolume(music, 0.5);
+    soundESP.setVolume(sound, 0.5);
+    audioESP.setVolume(voice, 0.5);
+ }
+else {
+    musicGER.setVolume(music, 0.5);
+    soundGER.setVolume(sound, 0.5);
+    audioGER.setVolume(voice, 0.5);
+}
 }
 
 function playFunction(){
