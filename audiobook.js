@@ -102,9 +102,20 @@ function setup(){
     gateB.position(wWidth/2, wHeight/2-100);
     gateB.mousePressed(gateFunction);
 
-    faladaB = createButton('1');
-    faladaB.position(wWidth/2, wHeight/2-40);
+    faladaB = createButton('5');
+    faladaB.position(wWidth/2, wHeight/2-120);
     faladaB.mousePressed(faladaFunction);
+
+    waterB = createButton('6');
+    waterB.position(wWidth/2,wHeight/2-140);
+    waterB.mousePressed(waterFunction);
+
+    outroB = createButton('7');
+    outroB.position(wWidth/2,wHeight/2-140);
+    outroB.mousePressed(outroFunction);
+
+
+    
     
 
 
@@ -174,4 +185,26 @@ function sprachFunction(){
 
 
     }
+}
+
+function introFunction(){
+    intro.play();
+}
+function magicFunction(){
+    magic.play();
+}
+function gateFunction(){
+    gate.play();
+}
+function gooseFunction(){
+    goose.play();
+}
+function faladaFunction(){
+    falada.play();
+}
+function waterFunction(){
+    water.play();
+}
+function outroFunction(){
+    outro.play();
 }
