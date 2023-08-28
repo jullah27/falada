@@ -13,6 +13,24 @@ let audioGER;
 let musicGER;
 let soundGER;
 let playButton;
+// sound FX variables
+let intro;
+let introB;
+let magic;
+let magicB;
+let goose;
+let gooseB;
+let gate;
+let gateB;
+let falada;
+let faladaB;
+let danger;
+let dangerB;
+let outro;
+let outroB;
+let water;
+let waterB;
+
 
 
 function preload(){
@@ -23,6 +41,13 @@ function preload(){
     audioGER = loadSound('assets/text_2');
     musicGER = loadSound('assets/musicGER');
     soundGER = loadSound('assets/soundGER');
+    intro = loadSound('assets/intro');
+    magic = loadSound('assets/magic');
+    goose = loadSound('assets/goose');
+    gate = loadSound('assets/gate');
+    falada = loadSound('assets/falada');
+    outro = loadSound('assets/outro');
+    water = loadSound('assets/water');
 }
 
 function setup(){
@@ -51,7 +76,7 @@ function setup(){
     languageButton = createButton('español')
     languageButton.position(wWidth/2, wHeight/2-20);
     languageButton.mousePressed(sprachFunction);
-
+    //default language spanish
     sprache = 1;
     audioESP.setVolume(0.8);
     musicESP.setVolume(0.8);
@@ -59,6 +84,29 @@ function setup(){
     audioGER.setVolume(0);
     musicGER.setVolume(0);
     soundGER.setVolume(0);
+
+    //sound fx buttons
+    introB = createButton('1');
+    introB.position(wWidth/2, wHeight/2-40);
+    introB.mousePressed(introFunction);
+
+    magicB = createButton('2');
+    magicB.position(wWidth/2, wHeight/2-60);
+    magicB.mousePressed(magicFunction);
+
+    gooseB = createButton('3');
+    gooseB.position(wWidth/2, wHeight/2-80);
+    gooseB.mousePressed(gooseFunction);
+
+    gateB = createButton('4');
+    gateB.position(wWidth/2, wHeight/2-100);
+    gateB.mousePressed(gateFunction);
+
+    faladaB = createButton('1');
+    faladaB.position(wWidth/2, wHeight/2-40);
+    faladaB.mousePressed(faladaFunction);
+    
+
 
  
 }
@@ -104,8 +152,8 @@ function playFunction(){
 }
 
 function sprachFunction(){
-    if (language == 1){
-        language = 0;
+    if (sprache == 1){
+        sprache = 0;
         audioESP.setVolume(0);
         musicESP.setVolume(0);
         soundESP.setVolume(0);
@@ -115,7 +163,7 @@ function sprachFunction(){
         languageButton.html('GERMAN');
     }
     else{
-        langauge = 1;
+        sprache = 1;
         audioESP.setVolume(0.8);
         musicESP.setVolume(0.8);
         soundESP.setVolume(0.8);
