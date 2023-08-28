@@ -21,7 +21,7 @@ function preload(){
     musicESP = loadSound('assets/musicESP');
     soundESP = loadSound ('assets/soundESP');
     audioGER = loadSound('assets/text_2');
-    musicGER = loadSound('assets/musisGER');
+    musicGER = loadSound('assets/musicGER');
     soundGER = loadSound('assets/soundGER');
 }
 
